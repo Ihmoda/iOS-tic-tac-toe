@@ -30,8 +30,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        if self.game_over == false{
-            let idx = sender.tag-1
+        let idx = sender.tag-1
+        if self.game_over == false && self.tic_tac_array[idx] == "empty" {
             if self.turn != "Green" {
                 self.tic_tac_array[idx] = "Red"
                 sender.backgroundColor = .red
@@ -76,6 +76,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     @IBAction func resetButtonPressed(_ sender: UIButton) {
         self.reset()
     }
